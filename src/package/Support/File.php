@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Yaml\Package\Support;
+namespace Ninthday\Yaml\Package\Support;
 
 use Illuminate\Support\Str;
 
@@ -17,8 +17,8 @@ class File
     {
         return
             is_dir($item) &&
-            !Str::endsWith($item, DIRECTORY_SEPARATOR.'.') &&
-            !Str::endsWith($item, DIRECTORY_SEPARATOR.'..');
+            !Str::endsWith($item, DIRECTORY_SEPARATOR . '.') &&
+            !Str::endsWith($item, DIRECTORY_SEPARATOR . '..');
     }
 
     /**
@@ -83,7 +83,7 @@ class File
     public function scanDir($dir)
     {
         return collect(scandir($dir))->map(function ($item) use ($dir) {
-            return $dir.DIRECTORY_SEPARATOR.$item;
+            return $dir . DIRECTORY_SEPARATOR . $item;
         });
     }
 

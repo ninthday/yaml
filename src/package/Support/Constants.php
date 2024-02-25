@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Yaml\Package\Support;
+namespace Ninthday\Yaml\Package\Support;
 
 class Constants
 {

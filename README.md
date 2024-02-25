@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/pragmarx/yaml"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/pragmarx/yaml.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/ninthday/yaml"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/ninthday/yaml.svg?style=flat-square"></a>
     <a href="/antonioribeiro/yaml/blob/master/LICENSE.md"><img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
     <a href="https://scrutinizer-yaml.com/g/antonioribeiro/yaml/?branch=master"><img alt="Code Quality" src="https://img.shields.io/scrutinizer/g/antonioribeiro/yaml.svg?style=flat-square"></a>
     <a href="https://scrutinizer-yaml.com/g/antonioribeiro/yaml/?branch=master"><img alt="Build" src="https://img.shields.io/scrutinizer/build/g/antonioribeiro/yaml.svg?style=flat-square"></a>
@@ -102,7 +102,7 @@ Which are simple bridges to [Symfony's YAML](https://symfony.com/doc/current/com
 Via Composer
 
 ``` bash
-$ composer require pragmarx/yaml
+$ composer require ninthday/yaml
 ```
 
 ## Using
@@ -119,7 +119,7 @@ Load the configuration in your `boot()` method:
 
 ``` php
 $this->app
-     ->make('pragmarx.yaml')
+     ->make('ninthday.yaml')
      ->loadToConfig($this->getConfigFile(), 'my-package');
 ```
 
@@ -140,7 +140,7 @@ config('my-package.name');
 To utilize the PECL YAML, you should [install the PECL YAML extension](https://www.php.net/manual/en/yaml.installation.php) and register the binding in the `register()` method of your service provider:
 
 ```php
-$this->app->bind(\PragmaRX\Yaml\Package\Support\Parser::class, \PragmaRX\Yaml\Package\Support\PeclParser::class);
+$this->app->bind(\Ninthday\Yaml\Package\Support\Parser::class, \Ninthday\Yaml\Package\Support\PeclParser::class);
 ```
 
 ## Example
@@ -155,7 +155,7 @@ current:
   format: "{$major}.{$minor}.{$patch}"
 cache:
   enabled: true
-  key: pragmarx-version
+  key: ninthday-version
 build:
   mode: git-local # git-remote or number
   number: 701031
@@ -188,4 +188,4 @@ This package is licensed under the MIT License - see the `LICENSE` file for deta
 Pull requests and issues are welcome.
 
 
-<!--[![Downloads](https://img.shields.io/packagist/dt/pragmarx/yaml.svg?style=flat-square)](https://packagist.org/packages/pragmarx/yaml)-->
+<!--[![Downloads](https://img.shields.io/packagist/dt/ninthday/yaml.svg?style=flat-square)](https://packagist.org/packages/ninthday/yaml)-->

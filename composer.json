@@ -1,6 +1,6 @@
 {
-    "name": "pragmarx/yaml",
-    "description": "Load your Laravel config files using yaml",
+    "name": "ninthday/yaml",
+    "description": "Load your Laravel config files using yaml. Forked from https://github.com/antonioribeiro/yaml",
     "keywords": [
         "laravel",
         "yaml",
@@ -12,31 +12,36 @@
             "name": "Antonio Carlos Ribeiro",
             "email": "acr@antoniocarlosribeiro.com",
             "role": "Creator & Designer"
+        },
+        {
+            "name": "Tuvix Shih",
+            "email": "tuvix@ninthday.me",
+            "role": "Contributor & Maintainer"
         }
     ],
     "require": {
         "php": ">=7.0",
         "illuminate/support": ">=5.5.33",
-        "symfony/yaml": "^3.4|^4.0|^5.0|^6.0"
+        "symfony/yaml": "^3.4|^4.0|^5.0|^6.0|^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.0|^6.4|^7.0|^8.0|^9.0",
-        "orchestra/testbench": "3.5|^3.6|^4.0|^5.0"
+        "phpunit/phpunit": "^4.0|^6.4|^7.0|^8.0|^9.0|^10.0",
+        "orchestra/testbench": "3.5|^3.6|^4.0|^5.0|^6.0|^7.0|^8.0",
     },
     "autoload": {
         "psr-4": {
-            "PragmaRX\\Yaml\\Package\\": "src/package",
-            "PragmaRX\\Yaml\\Tests\\": "tests/"
+            "Ninthday\\Yaml\\Package\\": "src/package",
+            "Ninthday\\Yaml\\Tests\\": "tests/"
         }
     },
     "extra": {
         "component": "package",
         "laravel": {
             "providers": [
-                "PragmaRX\\Yaml\\Package\\ServiceProvider"
+                "Ninthday\\Yaml\\Package\\ServiceProvider"
             ],
             "aliases": {
-                "Yaml": "PragmaRX\\Yaml\\Package\\Facade"
+                "Yaml": "Ninthday\\Yaml\\Package\\Facade"
             }
         }
     },

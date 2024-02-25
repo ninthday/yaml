@@ -1,8 +1,8 @@
 <?php
 
-namespace PragmaRX\Yaml\Tests;
+namespace Ninthday\Yaml\Tests;
 
-use PragmaRX\Yaml\Package\Facade as YamlFacade;
+use Ninthday\Yaml\Package\Facade as YamlFacade;
 
 class SymfonyYamlTest extends TestCase
 {
@@ -14,8 +14,8 @@ class SymfonyYamlTest extends TestCase
 
         $this->yaml = YamlFacade::instance();
 
-        $this->multiple = $this->yaml->loadToConfig(__DIR__.'/stubs/conf/multiple', 'multiple');
+        $this->multiple = $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/multiple', 'multiple');
 
-        $this->single = $this->yaml->loadToConfig(__DIR__.'/stubs/conf/single/single-app.yml', 'single');
+        $this->single = $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/single/single-app.yml', 'single');
     }
 }

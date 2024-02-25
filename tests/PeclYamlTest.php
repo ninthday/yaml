@@ -1,10 +1,10 @@
 <?php
 
-namespace PragmaRX\Yaml\Tests;
+namespace Ninthday\Yaml\Tests;
 
-use PragmaRX\Yaml\Package\Facade as YamlFacade;
-use PragmaRX\Yaml\Package\Support\Parser;
-use PragmaRX\Yaml\Package\Support\PeclParser;
+use Ninthday\Yaml\Package\Facade as YamlFacade;
+use Ninthday\Yaml\Package\Support\Parser;
+use Ninthday\Yaml\Package\Support\PeclParser;
 
 class PeclYamlTest extends TestCase
 {
@@ -22,8 +22,8 @@ class PeclYamlTest extends TestCase
 
         $this->yaml = YamlFacade::instance();
 
-        $this->multiple = $this->yaml->loadToConfig(__DIR__.'/stubs/conf/multiple', 'multiple');
+        $this->multiple = $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/multiple', 'multiple');
 
-        $this->single = $this->yaml->loadToConfig(__DIR__.'/stubs/conf/single/single-app.yml', 'single');
+        $this->single = $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/single/single-app.yml', 'single');
     }
 }
