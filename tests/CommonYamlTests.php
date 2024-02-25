@@ -1,13 +1,13 @@
 <?php
 
-namespace PragmaRX\Yaml\Tests;
+namespace Ninthday\Yaml\Tests;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
-use PragmaRX\Yaml\Package\Exceptions\InvalidYamlFile;
-use PragmaRX\Yaml\Package\Exceptions\MethodNotFound;
-use PragmaRX\Yaml\Package\Yaml as YamlService;
+use Ninthday\Yaml\Package\Exceptions\InvalidYamlFile;
+use Ninthday\Yaml\Package\Exceptions\MethodNotFound;
+use Ninthday\Yaml\Package\Yaml as YamlService;
 
 trait CommonYamlTests
 {
@@ -54,7 +54,7 @@ trait CommonYamlTests
         config(['mix.alter' => $laravelConfig1]);
         config(['mix.second-level.third-level.alter' => $laravelConfig2]);
 
-        $this->yaml->loadToConfig(__DIR__.'/stubs/conf/multiple', 'mix');
+        $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/multiple', 'mix');
 
         $this->assertEquals($laravelConfig1, config('mix.alter'));
         $this->assertEquals(config('multiple.app'), config('mix.app'));
@@ -64,22 +64,22 @@ trait CommonYamlTests
 
     public function test_can_list_files()
     {
-        $this->assertEquals(3, $this->yaml->listFiles(__DIR__.'/stubs/conf/multiple')->count());
-        $this->assertEquals(1, $this->yaml->listFiles(__DIR__.'/stubs/conf/single')->count());
-        $this->assertEquals(0, $this->yaml->listFiles(__DIR__.'/stubs/conf/non-existent')->count());
+        $this->assertEquals(3, $this->yaml->listFiles(__DIR__ . '/stubs/conf/multiple')->count());
+        $this->assertEquals(1, $this->yaml->listFiles(__DIR__ . '/stubs/conf/single')->count());
+        $this->assertEquals(0, $this->yaml->listFiles(__DIR__ . '/stubs/conf/non-existent')->count());
     }
 
     public function test_can_detect_invalid_yaml_files()
     {
         $this->expectException(InvalidYamlFile::class);
 
-        $this->yaml->loadToConfig(__DIR__.'/stubs/conf/wrong/invalid.yml', 'wrong');
+        $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/wrong/invalid.yml', 'wrong');
     }
 
     public function test_can_dump_yaml_files()
     {
         $this->assertEquals(
-            $this->cleanYamlString(file_get_contents(__DIR__.'/stubs/conf/single/single-app.yml')),
+            $this->cleanYamlString(file_get_contents(__DIR__ . '/stubs/conf/single/single-app.yml')),
             $this->cleanYamlString($this->yaml->dump($this->single->toArray()))
         );
     }
@@ -87,7 +87,7 @@ trait CommonYamlTests
     public function test_can_dump_yaml()
     {
         $this->assertEquals(
-            $this->cleanYamlString(file_get_contents(__DIR__.'/stubs/conf/single/single-app.yml')),
+            $this->cleanYamlString(file_get_contents(__DIR__ . '/stubs/conf/single/single-app.yml')),
             $this->cleanYamlString($this->yaml->dump($this->single->toArray()))
         );
     }
@@ -112,7 +112,7 @@ trait CommonYamlTests
 
     public function test_can_parse_file()
     {
-        $array = $this->yaml->parseFile(__DIR__.'/stubs/conf/multiple/second-level/third-level/app.yml');
+        $array = $this->yaml->parseFile(__DIR__ . '/stubs/conf/multiple/second-level/third-level/app.yml');
 
         $this->assertEquals('Brazil Third Level', Arr::get($array, 'person.address.country'));
     }
@@ -128,7 +128,7 @@ trait CommonYamlTests
     {
         App::shouldReceive('configurationIsCached')->andReturn(true);
 
-        $loaded = $this->yaml->loadToConfig(__DIR__.'/stubs/conf/single', 'single');
+        $loaded = $this->yaml->loadToConfig(__DIR__ . '/stubs/conf/single', 'single');
 
         $this->assertEmpty($loaded);
     }
@@ -144,13 +144,13 @@ trait CommonYamlTests
 
     public function getTempFile()
     {
-        $dir = __DIR__.'/tmp';
+        $dir = __DIR__ . '/tmp';
 
         if (!file_exists($dir)) {
             mkdir($dir, 0777, true);
         }
 
-        if (file_exists($file = $dir.DIRECTORY_SEPARATOR.'temp.yaml')) {
+        if (file_exists($file = $dir . DIRECTORY_SEPARATOR . 'temp.yaml')) {
             unlink($file);
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Yaml\Package\Support;
+namespace Ninthday\Yaml\Package\Support;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

@@ -1,10 +1,10 @@
 <?php
 
-namespace PragmaRX\Yaml\Package;
+namespace Ninthday\Yaml\Package;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
-use PragmaRX\Yaml\Package\Support\Parser;
-use PragmaRX\Yaml\Package\Support\SymfonyParser;
+use Ninthday\Yaml\Package\Support\Parser;
+use Ninthday\Yaml\Package\Support\SymfonyParser;
 
 class ServiceProvider extends IlluminateServiceProvider
 {
@@ -31,7 +31,7 @@ class ServiceProvider extends IlluminateServiceProvider
     private function registerService()
     {
         $this->app->bind(Parser::class, SymfonyParser::class);
-        $this->app->singleton('pragmarx.yaml', function ($app) {
+        $this->app->singleton('ninthday.yaml', function ($app) {
             return new Yaml(null, $app->make(Parser::class), null);
         });
     }

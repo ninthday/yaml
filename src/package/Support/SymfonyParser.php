@@ -1,9 +1,9 @@
 <?php
 
-namespace PragmaRX\Yaml\Package\Support;
+namespace Ninthday\Yaml\Package\Support;
 
 use Illuminate\Support\Collection;
-use PragmaRX\Yaml\Package\Exceptions\InvalidYamlFile;
+use Ninthday\Yaml\Package\Exceptions\InvalidYamlFile;
 use Symfony\Component\Yaml\Parser as BaseSymfonyParser;
 use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 
@@ -64,7 +64,7 @@ class SymfonyParser implements Parser
      * @param string $filename The path to the YAML file to be parsed
      * @param int    $flags    A bit field of PARSE_* constants to customize the YAML parser behavior
      *
-     * @throws \PragmaRX\Yaml\Package\Exceptions\InvalidYamlFile If the file could not be read or the YAML is not valid
+     * @throws \Ninthday\Yaml\Package\Exceptions\InvalidYamlFile If the file could not be read or the YAML is not valid
      *
      * @return mixed The YAML converted to a PHP value
      */

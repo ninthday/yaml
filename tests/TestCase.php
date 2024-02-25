@@ -1,9 +1,9 @@
 <?php
 
-namespace PragmaRX\Yaml\Tests;
+namespace Ninthday\Yaml\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use PragmaRX\Yaml\Package\ServiceProvider as YamlServiceProvider;
+use Ninthday\Yaml\Package\ServiceProvider as YamlServiceProvider;
 
 abstract class TestCase extends OrchestraTestCase
 {

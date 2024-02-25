@@ -1,14 +1,14 @@
 <?php
 
-namespace PragmaRX\Yaml\Package;
+namespace Ninthday\Yaml\Package;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
-use PragmaRX\Yaml\Package\Exceptions\MethodNotFound;
-use PragmaRX\Yaml\Package\Support\File;
-use PragmaRX\Yaml\Package\Support\Parser;
-use PragmaRX\Yaml\Package\Support\Resolver;
-use PragmaRX\Yaml\Package\Support\SymfonyParser;
+use Ninthday\Yaml\Package\Exceptions\MethodNotFound;
+use Ninthday\Yaml\Package\Support\File;
+use Ninthday\Yaml\Package\Support\Parser;
+use Ninthday\Yaml\Package\Support\Resolver;
+use Ninthday\Yaml\Package\Support\SymfonyParser;
 
 /**
  * @method parse($string)
@@ -23,21 +23,21 @@ class Yaml
     /**
      * File class.
      *
-     * @var \PragmaRX\Yaml\Package\Support\File
+     * @var \Ninthday\Yaml\Package\Support\File
      */
     protected $file;
 
     /**
      * Parser object.
      *
-     * @var \PragmaRX\Yaml\Package\Support\Parser
+     * @var \Ninthday\Yaml\Package\Support\Parser
      */
     protected $parser;
 
     /**
      * Resolver object.
      *
-     * @var \PragmaRX\Yaml\Package\Support\Resolver
+     * @var \Ninthday\Yaml\Package\Support\Resolver
      */
     protected $resolver;
 

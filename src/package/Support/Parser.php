@@ -1,8 +1,8 @@
 <?php
 
-namespace PragmaRX\Yaml\Package\Support;
+namespace Ninthday\Yaml\Package\Support;
 
-use PragmaRX\Yaml\Package\Exceptions\InvalidYamlFile;
+use Ninthday\Yaml\Package\Exceptions\InvalidYamlFile;
 
 /**
  * @codeCoverageIgnore
@@ -49,7 +49,7 @@ interface Parser
      * @param string $filename The path to the YAML file to be parsed
      * @param int    $flags    A bit field of PARSE_* constants to customize the YAML parser behavior
      *
-     * @throws \PragmaRX\Yaml\Package\Exceptions\InvalidYamlFile If the file could not be read or the YAML is not valid
+     * @throws \Ninthday\Yaml\Package\Exceptions\InvalidYamlFile If the file could not be read or the YAML is not valid
      *
      * @return mixed The YAML converted to a PHP value
      */
